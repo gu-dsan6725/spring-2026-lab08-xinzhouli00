@@ -1,0 +1,35 @@
+Here's a comparison of Tesla (TSLA) and Ford (F) based on current data from Yahoo Finance (prices are delayed):
+
+**Key Metrics:**
+- **Price**  
+  Tesla: **$367.96 (-3.24%)** vs. Ford: **$11.52 (-1.03%)**
+  
+- **Market Cap**  
+  Tesla: **$1.38 trillion** vs. Ford: **$45.96 billion**  
+  *(Tesla's market cap is ~30x larger)*
+
+- **P/E Ratio**  
+  Tesla: **343.89** (very high valuation relative to earnings) vs. Ford: **N/A** (no earnings data available)
+
+- **52-Week Range**  
+  Tesla: **$214.25 – $498.83** (36% range) vs. Ford: **$8.44 – $14.80** (76% range)  
+  *(Ford shows higher volatility)*
+
+- **Industry Role**  
+  Both are in *Auto Manufacturers*, but Tesla dominates EV innovation while Ford focuses on traditional vehicles + hybrid/Ford Mustang Mach-E.
+
+---
+
+**Takeaways:**  
+- **Tesla** is a high-growth "risk-on" bet with a massive valuation but unprofitable at times in the past.  
+- **Ford** offers a lower-cost entry with more stability but faces challenges in the EV transition.
+
+**Which is better?**  
+Depends on **your goals**:
+- Bet on **Tesla** for long-term disruption and electrification growth (but prepare for volatility).
+- Consider **Ford** for cyclical auto recovery bets and lower price exposure (but limited growth potential).
+
+Want to dive into their financials or recent news?
+[Done]
+
+============================================================

@@ -1,0 +1,64 @@
+Here's the latest information for **Apple Inc. (AAPL)** as of the last market close (data from Yahoo Finance, note: delayed):
+
+---
+
+**Current Price**: $247.99 (-0.39%)  
+**Market Cap**: $3.64 trillion  
+**P/E Ratio**: 31.35  
+**52-Week Range**: $169.21 - $288.62  
+
+---
+
+**Key Highlights**:
+- **Sector**: Consumer Electronics  
+- **Industry**: Mobile Handsets  
+- **Description**: Designs, manufactures, and sells smartphones, computers, and software.  
+
+Would you like historical price data, a comparison with another stock, or more financial details?
+[Done]
+
+============================================================
+
+zsh: command not found: #
+Session: cli_session
+Query: Now compare it with GOOGL
+------------------------------------------------------------
+
+[Tool calls starting...]
+
+[Calling tool: compare_stocks with args {'symbol1': 'AAPL', 'symbol2': 'GOOGL'}]
+[Tool calls completed]
+
+Here's a comparison of **Apple (AAPL)** and **Google (GOOGL)** based on current data (prices are delayed, source: Yahoo Finance):
+
+---
+
+### **Key Metrics**
+| **Metric**          | **Apple (AAPL)**            | **Google (GOOGL)**          |
+|----------------------|----------------------------|-----------------------------|
+| **Price**            | $247.99 (-0.39%)           | $301.00 (-2.00%)            |
+| **Market Cap**       | $3.64T (slightly higher)   | $3.64T                      |
+| **P/E Ratio**        | 31.35                      | 27.84                       |
+| **52-Week Range**    | $169.21 – $288.62          | $140.53 – $349.00            |
+| **Sector/Industry**  | Technology / Consumer Elec.| Communication Services / Internet Content |
+
+---
+
+### **Notable Points**
+- **Similar Market Caps**: Both are roughly $3.64 trillion, but AAPL edges ahead slightly.
+- **Valuation**: Google has a lower P/E ratio (27.84 vs. 31.35), suggesting it’s cheaper relative to earnings.
+- **Price Volatility**: GOOGL has a **much wider 52-week range** ($140.53–$349 vs. $169.21–$288.62), reflecting sharper swings in investor sentiment.
+- **Sectors**:
+  - **Apple** focuses on hardware/software integration (iPhone, Mac, ecosystem).
+  - **Google** (Alphabet) is ad-driven (Search, YouTube) and focuses on cloud/AI (Cloud, Waymo).
+
+---
+
+### **Key Risk/Diversification Insight**
+- **Apple** benefits from loyal hardware demand but faces supply chain risks.
+- **Google** is ad-revenue heavy (80%+ of revenue) but leads in AI/cloud growth areas.
+
+Would you like to explore their financial statements, recent news, or historical performance instead?
+[Done]
+
+============================================================

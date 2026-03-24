@@ -1,0 +1,27 @@
+Here's a comparison of Apple (AAPL) and Microsoft (MSFT) based on current data from Yahoo Finance (note: prices are delayed):
+
+**Key Metrics:**
+- **Price**  
+  Apple: $247.99 (-0.39%)  
+  Microsoft: $381.85 (-1.85%)
+
+- **Market Cap**  
+  Apple: $3.64 trillion (larger)  
+  Microsoft: $2.84 trillion
+
+- **P/E Ratio**  
+  Apple: 31.35  
+  Microsoft: 23.93
+
+- **52-Week Range**  
+  Apple: $169.21 - $288.62  
+  Microsoft: $344.79 - $555.45
+
+**Industries:**  
+Apple operates in *Consumer Electronics*, while Microsoft focuses on *Software - Infrastructure*.
+
+**Notable:**  
+Microsoft has a narrower P/E ratio, suggesting potentially lower valuation relative to earnings. Apple has a higher current price but lower market cap than Microsoft at the moment.
+
+Would you like to dive deeper into any specific metric or analysis?
+[Done]

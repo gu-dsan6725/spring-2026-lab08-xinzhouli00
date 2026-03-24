@@ -178,6 +178,91 @@ def _get_company_info(
             "ticker": ticker.upper()
         }
 
+def _compare_stocks(
+    symbol1: str,
+    symbol2: str
+) -> Dict[str, Any]:
+    """Compare two stocks side-by-side.
+ 
+    Args:
+        symbol1: First stock symbol (e.g., 'AAPL')
+        symbol2: Second stock symbol (e.g., 'MSFT')
+ 
+    Returns:
+        Dictionary with comparison data for both stocks
+    """
+    try:
+        def _fetch_stock_data(ticker: str) -> Dict[str, Any]:
+            stock = yf.Ticker(ticker.upper())
+            info = stock.info
+ 
+            current_price = info.get('currentPrice') or info.get('regularMarketPrice')
+            previous_close = info.get('previousClose')
+            market_cap = info.get('marketCap')
+ 
+            change_percent = None
+            if current_price and previous_close:
+                change_percent = round((current_price - previous_close) / previous_close * 100, 2)
+ 
+            # Format market cap as human-readable string
+            market_cap_str = None
+            if market_cap:
+                if market_cap >= 1_000_000_000_000:
+                    market_cap_str = f"{market_cap / 1_000_000_000_000:.2f}T"
+                elif market_cap >= 1_000_000_000:
+                    market_cap_str = f"{market_cap / 1_000_000_000:.2f}B"
+                else:
+                    market_cap_str = f"{market_cap / 1_000_000:.2f}M"
+ 
+            return {
+                "symbol": ticker.upper(),
+                "company_name": info.get('longName', ticker.upper()),
+                "current_price": round(current_price, 2) if current_price else None,
+                "previous_close": round(previous_close, 2) if previous_close else None,
+                "change_percent": change_percent,
+                "market_cap": market_cap_str,
+                "market_cap_raw": market_cap,
+                "sector": info.get('sector'),
+                "industry": info.get('industry'),
+                "pe_ratio": info.get('trailingPE'),
+                "52w_high": info.get('fiftyTwoWeekHigh'),
+                "52w_low": info.get('fiftyTwoWeekLow'),
+                "currency": info.get('currency', 'USD'),
+            }
+ 
+        stock1_data = _fetch_stock_data(symbol1)
+        stock2_data = _fetch_stock_data(symbol2)
+ 
+        # Determine which has higher market cap
+        higher_market_cap = None
+        if stock1_data.get('market_cap_raw') and stock2_data.get('market_cap_raw'):
+            if stock1_data['market_cap_raw'] > stock2_data['market_cap_raw']:
+                higher_market_cap = stock1_data['symbol']
+            else:
+                higher_market_cap = stock2_data['symbol']
+ 
+        return {
+            "comparison": {
+                "symbol1": symbol1.upper(),
+                "symbol2": symbol2.upper(),
+                "stock1": stock1_data,
+                "stock2": stock2_data,
+                "summary": {
+                    "higher_market_cap": higher_market_cap,
+                    "timestamp": datetime.now().isoformat()
+                }
+            }
+        }
+ 
+    except Exception as e:
+        logger.error(f"Error comparing stocks {symbol1} vs {symbol2}: {e}")
+        return {
+            "error": str(e),
+            "symbol1": symbol1.upper(),
+            "symbol2": symbol2.upper()
+        }
+ 
+ 
 
 # Tool definitions for Strands agent
 STOCK_TOOLS = [
@@ -230,6 +315,25 @@ STOCK_TOOLS = [
             "required": ["ticker"]
         },
         "function": _get_company_info
+    },
+    {
+        "name": "compare_stocks",
+        "description": "Compare two stocks side-by-side, including price, market cap, sector, P/E ratio, and 52-week range. Use this when the user wants to compare two stocks, asks 'which is better', or asks about differences between two companies.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "symbol1": {
+                    "type": "string",
+                    "description": "First stock ticker symbol to compare (e.g., AAPL, TSLA, MSFT)"
+                },
+                "symbol2": {
+                    "type": "string",
+                    "description": "Second stock ticker symbol to compare (e.g., MSFT, F, GOOGL)"
+                }
+            },
+            "required": ["symbol1", "symbol2"]
+        },
+        "function": _compare_stocks
     }
 ]
 
